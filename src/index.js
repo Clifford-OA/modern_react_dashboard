@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ContextProvider } from './contexts/ContextProvider';
+
+import { registerLicense } from '@syncfusion/ej2-base';
+
+// Registering Syncfusion license key
+registerLicense('ORg4AjUWIQA/Gnt2VVhhQlFac1pJWnxPYVF2R2FJeFR1dV9HYkwxOX1dQl9hSXhTcERqXHxbdHFRR2E=');
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>
 );
 
