@@ -9,6 +9,7 @@ import { SparklineComponent } from '@syncfusion/ej2-react-charts';
 
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className='mt-1'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -24,7 +25,7 @@ const Ecommerce = () => {
           <div className='mt-6'>
             <Button
               color='white'
-              bgColor='blue'
+              bgColor={currentColor}
               text='Download'
               size='md'
               borderRadius='10px' />
@@ -59,7 +60,7 @@ const Ecommerce = () => {
 
       <div className='flex gap-10 flex-wrap justify-center'>
         <div className='bg-white dark:text-gray-200 
-           dark:bg-secondary-dark-bg m-3 rounded-2xl md:w-780'>
+           dark:bg-secondary-dark-bg m-7 p-7 rounded-2xl md:w-780'>
           <div className='flex justify-between'>
             <p className='font-semibold text-xl'>Revenue Updates</p>
             <div className='flex items-center gap-4'>
@@ -97,19 +98,19 @@ const Ecommerce = () => {
 
               <div className='mt-5'>
                 <SparkLine
-                  currentColor='blue'
+                  currentColor={currentColor}
                   id='line-sparkline'
                   type="Line"
                   height="100px"
                   width="250px"
                   data={SparklineAreaData}
-                  color='blue' />
+                  color={currentColor} />
               </div>
 
               <div className='mt-10'>
                 <Button
                   color='white'
-                  bgColor='blue'
+                  bgColor={currentColor}
                   text='Download Report'
                   borderRadius='10px' />
               </div>

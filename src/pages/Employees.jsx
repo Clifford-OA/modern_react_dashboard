@@ -7,7 +7,6 @@ import {
 import { employeesData, employeesGrid } from '../data/dummy';
 import { Header } from '../components';
 
-
 const Employees = () => {
   return (
     <div className='m-2 md:m-2 p-2 md:p-10 bg-white rounded-xl'>
