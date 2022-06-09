@@ -29,7 +29,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 const Navbar = () => {
   const {
     activeMenu, setActiveMenu,
-    isClicked, setIsClicked, handleClick,
+    isClicked, handleClick,
     screenSize, setScreenSize, currentColor,
   }
     = useStateContext();
@@ -53,13 +53,14 @@ const Navbar = () => {
     }
   }, [screenSize])
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
       <NavButton
         title='Menu'
-        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />} />
 
@@ -86,7 +87,6 @@ const Navbar = () => {
 
         <TooltipComponent
           content='Profile'
-          opensOn='Hover'
           position='BottomCenter'>
           <div className='flex items-center gap-2 cursor-pointer
             p-1 hover:bg-light-gray rounded-lg'
